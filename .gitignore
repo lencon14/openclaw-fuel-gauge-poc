@@ -1,0 +1,24 @@
+# Dependencies / build outputs
+node_modules/
+dist/
+coverage/
+*.log
+
+# Local OpenClaw/agent workspace files
+.openclaw/
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md
+
+# Local secrets / environment overrides
+.env
+.env.*
+*.local.json
+
+# OS/editor noise
+.DS_Store
+.vscode/
+.idea/

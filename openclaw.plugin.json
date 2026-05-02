@@ -1,0 +1,62 @@
+{
+  "id": "openclaw-fuel-gauge-poc",
+  "name": "OpenClaw Fuel Gauge PoC",
+  "description": "Manual refresh remaining-capacity gauge for the OpenClaw Control UI.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "routePrefix": {
+        "type": "string",
+        "default": "/openclaw-fuel-gauge",
+        "description": "Gateway route prefix. The plugin exposes <prefix>.json, <prefix>/, and <prefix>.user.js."
+      },
+      "collectors": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["openclaw", "claude-code"]
+        },
+        "default": ["openclaw", "claude-code"],
+        "description": "Remaining-limit collectors to run when Refresh is clicked."
+      },
+      "timezone": {
+        "type": "string",
+        "default": "",
+        "description": "IANA timezone hint. Empty means system timezone."
+      },
+      "locale": {
+        "type": "string",
+        "default": "",
+        "description": "Locale hint. Empty means system locale."
+      },
+      "commands": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "openclawBin": {
+            "type": "string",
+            "default": "openclaw"
+          },
+          "claudeCredentialsPath": {
+            "type": "string",
+            "default": "~/.claude/.credentials.json"
+          },
+          "claudeUsageEndpoint": {
+            "type": "string",
+            "default": "https://api.anthropic.com/api/oauth/usage"
+          },
+          "timeoutMs": {
+            "type": "integer",
+            "default": 45000,
+            "minimum": 5000,
+            "maximum": 300000
+          }
+        }
+      }
+    }
+  }
+}
