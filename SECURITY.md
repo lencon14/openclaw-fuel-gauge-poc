@@ -13,6 +13,10 @@ The plugin should never:
 - use Claude Code statusLine hooks or statusLine caches as a data source;
 - modify Claude Code global settings.
 
+## Browser extension
+
+The optional browser extension is a UI layer only. It uses `activeTab`, `scripting`, and `storage`; it does not request host permissions. It injects the overlay only when the extension icon is clicked, then reads the existing Gateway-authenticated plugin JSON route from the active page origin.
+
 ## Routes
 
 Plugin routes are registered as Gateway-authenticated routes:

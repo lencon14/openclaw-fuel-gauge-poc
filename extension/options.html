@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw Fuel Gauge Options</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.45; }
+    label { display: block; font-weight: 700; margin-top: 16px; }
+    input[type="text"], select { width: 100%; box-sizing: border-box; padding: 9px 10px; margin-top: 5px; border-radius: 10px; border: 1px solid color-mix(in srgb, CanvasText 25%, transparent); background: Canvas; color: CanvasText; }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+    .row label { margin: 0; font-weight: 600; }
+    button { border: 1px solid color-mix(in srgb, CanvasText 25%, transparent); border-radius: 999px; padding: 9px 14px; cursor: pointer; }
+    .hint { opacity: .72; font-size: 13px; margin-top: 4px; }
+    .status { margin-top: 14px; min-height: 1.4em; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <h1>OpenClaw Fuel Gauge</h1>
+  <p>Configure the optional browser-extension overlay. The extension only injects UI into the active tab when you click the extension icon.</p>
+
+  <label for="routePrefix">Route prefix</label>
+  <input id="routePrefix" type="text" spellcheck="false" />
+  <div class="hint">Default: <code>/openclaw-fuel-gauge</code>. The extension fetches <code>&lt;prefix&gt;.json</code> from the current OpenClaw page origin.</div>
+
+  <label for="position">Button position</label>
+  <select id="position">
+    <option value="bottom-right">Bottom right</option>
+    <option value="bottom-left">Bottom left</option>
+    <option value="top-right">Top right</option>
+    <option value="top-left">Top left</option>
+  </select>
+
+  <label for="providers">Providers to show</label>
+  <input id="providers" type="text" spellcheck="false" placeholder="openai-codex, claude-code" />
+  <div class="hint">Comma-separated provider IDs or names. Empty means all providers.</div>
+
+  <label for="windows">Windows to show</label>
+  <input id="windows" type="text" spellcheck="false" placeholder="5h, Week" />
+  <div class="hint">Comma-separated window labels. Empty means all windows.</div>
+
+  <div class="row">
+    <label><input id="compact" type="checkbox" /> Compact mode</label>
+    <label><input id="autoRefreshOnOpen" type="checkbox" /> Refresh when opened</label>
+  </div>
+
+  <div class="row">
+    <button id="save" type="button">Save</button>
+    <button id="reset" type="button">Reset defaults</button>
+  </div>
+  <div id="status" class="status" role="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

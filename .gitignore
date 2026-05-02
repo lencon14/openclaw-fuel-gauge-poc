@@ -2,6 +2,7 @@
 node_modules/
 dist/
 coverage/
+.tmp/
 *.log
 
 # Local OpenClaw/agent workspace files
@@ -17,6 +18,10 @@ USER.md
 .env
 .env.*
 *.local.json
+
+# Local community/posting drafts
+DISCORD_POST_DRAFT.md
+OPENCLAW_ISSUE_DRAFT.md
 
 # OS/editor noise
 .DS_Store

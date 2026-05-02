@@ -25,8 +25,9 @@
     }
   },
   "scripts": {
-    "check": "node --check index.js && node --check src/config.js && node --check src/collector.js && node --check userscript/openclaw-fuel-gauge.client.js && node --check userscript/openclaw-fuel-gauge.user.js",
+    "check": "node --check index.js && node --check src/config.js && node --check src/collector.js && node --check userscript/openclaw-fuel-gauge.client.js && node --check userscript/openclaw-fuel-gauge.user.js && node --check extension/background.js && node --check extension/content.js && node --check extension/options.js && node --check tests/extension-smoke.mjs && node -e \"JSON.parse(require('node:fs').readFileSync('extension/manifest.json', 'utf8'))\"",
     "collect": "node ./src/collector.js",
-    "smoke": "node ./src/collector.js --pretty"
+    "smoke": "node ./src/collector.js --pretty",
+    "test:extension": "node ./tests/extension-smoke.mjs"
   }
 }

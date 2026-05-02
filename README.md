@@ -23,6 +23,7 @@ This is an unofficial/reference implementation. It may be useful as a standalone
 - UI surfaces:
   - Standalone mini panel.
   - Control UI userscript/client overlay with a manual `⛽ Limits` button.
+  - Optional unpacked browser extension for a configurable local overlay.
 
 ## Design goals
 
@@ -48,6 +49,26 @@ Then open:
 - `https://<your-openclaw-host>/openclaw-fuel-gauge/`
 - `https://<your-openclaw-host>/openclaw-fuel-gauge.user.js`
 - `https://<your-openclaw-host>/openclaw-fuel-gauge.bookmarklet`
+
+## Optional browser extension
+
+An unpacked Chrome/Edge extension is included under [`extension/`](extension/). It is a local UI layer only:
+
+- click the extension icon to inject the overlay into the active OpenClaw tab;
+- no host permissions;
+- no background polling;
+- does not read provider credentials;
+- fetches `<routePrefix>.json` from the current OpenClaw page origin.
+
+To try it locally:
+
+1. Open `chrome://extensions` or `edge://extensions`.
+2. Enable **Developer mode**.
+3. Click **Load unpacked**.
+4. Select the `extension/` folder.
+5. Open the OpenClaw Control UI and click the extension icon.
+
+The extension options page supports route prefix, button position, compact mode, provider filter, window filter, and optional refresh-on-open.
 
 ## Privacy and safety notes
 
@@ -112,15 +133,17 @@ OPENCLAW_FUEL_GAUGE_CLAUDE_USAGE_ENDPOINT=https://api.anthropic.com/api/oauth/us
 ## Development
 
 ```bash
+npm run check
 npm run smoke
+npm run test:extension
 ```
 
-The smoke test prints a JSON snapshot and should include `source` and `confidence` fields for every provider.
+The smoke test prints a JSON snapshot and should include `source` and `confidence` fields for every provider. The extension smoke test launches a temporary Chromium page through the Chrome DevTools Protocol, injects the overlay, fetches a fixture fuel-gauge JSON route, verifies rendered provider/source/confidence data, and writes a screenshot to `.tmp/extension-smoke.png`.
 
 ## Known limitations
 
 - Experimental PoC; no maintenance promise yet.
-- The userscript/bookmarklet overlay is a prototype, not a first-class Control UI extension point.
+- The userscript/bookmarklet/browser-extension overlays are prototypes, not first-class Control UI extension points.
 - Claude Code usage depends on Claude Code OAuth credentials and the OAuth usage endpoint.
 - Provider coverage depends on provider-reported remaining-limit data being available.
 

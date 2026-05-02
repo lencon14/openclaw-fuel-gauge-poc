@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "OpenClaw Fuel Gauge",
+  "version": "0.0.1",
+  "description": "Unofficial companion UI for the OpenClaw Fuel Gauge plugin.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_title": "OpenClaw Fuel Gauge"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html"
+}
