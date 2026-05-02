@@ -24,8 +24,6 @@ This is an unofficial/reference implementation. It may be useful as a standalone
   - Standalone mini panel.
   - Control UI userscript/client overlay with a manual `⛽ Limits` button.
 
-`ccusage` is intentionally not used. It is useful for usage reports, but it is log-derived and tool-specific, not a remaining-limit source.
-
 ## Design goals
 
 - Do not modify OpenClaw core files or `dist/control-ui`.
@@ -33,7 +31,6 @@ This is an unofficial/reference implementation. It may be useful as a standalone
 - Use a manual Refresh button instead of background polling.
 - Label every data source and confidence level.
 - Use provider-reported remaining-limit data where available.
-- Do not use log-derived usage estimates as remaining-limit data.
 - Keep environment-specific values configurable.
 
 ## Install from a local checkout

@@ -186,7 +186,6 @@ async function collectClaudeCodeOauth(config) {
     plan: claudePlanFromCredentials(credentials),
     source: "Claude Code OAuth usage endpoint",
     confidence: "provider-reported",
-    note: "no ccusage/log estimate.",
     windows,
   };
 }

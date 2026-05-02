@@ -25,7 +25,6 @@ Safety stance:
 
 - manual refresh only
 - source/confidence labels on every card
-- no `ccusage`/log-derived remaining-limit estimates
 - no Claude Code statusLine hooks/caches
 - Gateway-authenticated plugin routes
 
@@ -54,7 +53,6 @@ Add a manual “fuel gauge” affordance that shows provider-reported remaining 
 - no token spend just to check capacity;
 - label every data source and confidence level;
 - prefer provider-reported remaining-limit data;
-- do not treat log-derived usage estimates as remaining-limit truth.
 
 Reference PoC:
 

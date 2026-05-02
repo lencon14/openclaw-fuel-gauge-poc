@@ -34,7 +34,6 @@ Before publishing:
 ## Not included by design
 
 - Background polling.
-- Log-derived remaining-limit estimates.
 - Claude Code statusLine hooks or caches.
 - OpenClaw core file modifications.
 
