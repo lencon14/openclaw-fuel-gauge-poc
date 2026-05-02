@@ -36,7 +36,7 @@ I’d especially like feedback on:
 3. how provider-reported remaining limits should be normalized across providers,
 4. where this UI should live in the Control UI.
 
-Repo: <URL>
+Repo: https://github.com/lencon14/openclaw-fuel-gauge-poc
 
 ## GitHub Discussion / OpenClaw core proposal draft
 
@@ -58,7 +58,7 @@ Add a manual “fuel gauge” affordance that shows provider-reported remaining 
 
 Reference PoC:
 
-<URL>
+https://github.com/lencon14/openclaw-fuel-gauge-poc
 
 Current PoC data sources:
 

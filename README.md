@@ -39,7 +39,7 @@ This is an unofficial/reference implementation. It may be useful as a standalone
 ## Install from a local checkout
 
 ```bash
-git clone https://github.com/<owner>/openclaw-fuel-gauge-poc.git
+git clone https://github.com/lencon14/openclaw-fuel-gauge-poc.git
 cd openclaw-fuel-gauge-poc
 openclaw plugins install "$PWD"
 ```
